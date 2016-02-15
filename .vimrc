@@ -41,3 +41,11 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set nu
 set guifont=Consolas
+
+function! Repeat()
+    let times = input("Count: ")
+    let char  = input("Char: ")
+    exe ":normal a" . repeat(char, times)
+endfunction
+
+imap <C-u> <C-o>:call Repeat()<cr>
